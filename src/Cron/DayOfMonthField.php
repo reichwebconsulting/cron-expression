@@ -109,12 +109,11 @@ class DayOfMonthField extends AbstractField
         $basicChecks = parent::validate($value);
 
         // Validate that a list don't have W or L
-        if (strpos($value, ',') !== false && (strpos($value, 'W') !== false || strpos($value, 'L') !== false)) {
+        if (strpos($value, ',') !== false && (strpos($value, 'W') !== false) {
             return false;
         }
 
         if (!$basicChecks) {
-
             if ($value === 'L') {
                 return true;
             }
